@@ -1,7 +1,7 @@
 'use strict';
 
-var parser = require('./lib/parser');
-var serializer = require('./lib/serializer');
+var Parser = require('./lib/parser');
+var Serializer = require('./lib/serializer');
 
 function SVGO(opts) {
     if (!(this instanceof SVGO)) {
@@ -12,12 +12,12 @@ function SVGO(opts) {
 }
 
 SVGO.prototype.optimize = function(data, callback) {
-    parser().parse(data, function(err, obj) {
+    Parser().parse(data, function(err, obj) {
         if (err) {
             return callback(err);
         }
 
-        data = serializer({ pretty: true }).serialize(obj);
+        data = Serializer({ pretty: true }).serialize(obj);
         callback(null, data);
     });
 };

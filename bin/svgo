@@ -4,7 +4,7 @@
 var fs = require('fs');
 var program = require('commander');
 var pkg = require('../package');
-var svgo = require('../');
+var SVGO = require('../');
 
 program
     .version(pkg.version)
@@ -43,7 +43,7 @@ if (!process.stdin.isTTY) {
 }
 
 function optimizeString(data) {
-    svgo().optimize(data, function(err, data) {
+    SVGO().optimize(data, function(err, data) {
         if (err) {
             throw err;
         }
