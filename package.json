@@ -24,6 +24,7 @@
     "test": "echo test"
   },
   "dependencies": {
+    "commander": "2.5.x",
     "sax": "0.6.x"
   },
   "devDependencies": {
