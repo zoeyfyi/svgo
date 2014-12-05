@@ -1,0 +1,39 @@
+{
+  "name": "svgo",
+  "version": "1.0.0-alpha.1",
+  "description": "Nodejs-based tool for optimizing SVG vector graphics files",
+  "keywords": [ "svg", "optimize", "minify" ],
+  "homepage": "https://github.com/svg/svgo",
+  "bugs": {
+    "url": "https://github.com/svg/svgo/issues"
+  },
+  "author": "Kir Belevich <kir@soulshine.in> (https://github.com/deepsweet)",
+  "contributors": [
+      "Sergey Belov <peimei@ya.ru> (http://github.com/arikon)",
+      "Lev Solntsev <lev.sun@ya.ru> (http://github.com/GreLI)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/svg/svgo.git"
+  },
+  "bin": {
+    "svgo": "./bin/svgo"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo test"
+  },
+  "dependencies": {
+    "sax": "0.6.x"
+  },
+  "devDependencies": {
+    "mocha": "2.0.x",
+    "chai": "1.10.x",
+    "istanbul": "0.3.x",
+    "coveralls": "2.11.x"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT"
+}
