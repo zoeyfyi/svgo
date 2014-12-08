@@ -33,13 +33,13 @@
     "coveralls": "2.11.x"
   },
   "scripts": {
-    "eslint": "eslint *.js lib/*.js",
-    "jscs": "jscs *.js lib/*.js",
+    "eslint": "eslint *.js lib/*.js test/*.js",
+    "jscs": "jscs *.js lib/*.js test/*.js",
     "lint": "npm run eslint && npm run jscs",
     "unit": "mocha --recursive -R spec",
     "test": "npm run lint && npm run unit",
-    "coverage": "istanbul cover _mocha -- -R spec",
-    "coveralls": "istanbul cover _mocha -R lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls"
+    "coverage": "istanbul cover _mocha --report lcovonly -- -R spec",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls"
   },
   "engines": {
     "node": ">=0.10.0"
