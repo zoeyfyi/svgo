@@ -10,12 +10,12 @@
 Work in progress:
 
 - [ ] [svgp](https://github.com/svg/svgp)
-  - [x] Parser
-    - [x] sync!
+  - [x] parser
+    - [x] sync
     - [x] tests
   - [ ] DOM API
     - [ ] tests
-  - [ ] Serializer
+  - [ ] serializer
     - [ ] deal with XML entities
     - [x] tests
 - [ ] new event-based plugins architecture
