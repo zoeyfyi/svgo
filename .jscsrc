@@ -1,6 +1,18 @@
 {
-  "requireCurlyBraces": true,
-  "requireSpaceBeforeKeywords": true,
+  "requireCurlyBraces": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch"
+  ],
+  "requireSpaceBeforeKeywords": [
+    "else",
+    "while",
+    "catch"
+  ],
   "requireSpaceAfterKeywords": [
     "do",
     "for",
@@ -57,7 +69,6 @@
     "for",
     "if",
     "switch",
-    "case",
     "try",
     "catch",
     "void",
@@ -94,6 +105,5 @@
   "validateLineBreaks": "LF",
   "validateQuoteMarks": "'",
   "validateParameterSeparator": ", ",
-  "disallowCapitalizedComments": true,
   "safeContextKeyword": "that"
 }

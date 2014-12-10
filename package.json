@@ -29,17 +29,19 @@
     "jscs": "1.8.x",
     "mocha": "2.0.x",
     "chai": "1.10.x",
-    "istanbul": "0.3.x",
+    "unit-coverage": "3.2.x",
     "coveralls": "2.11.x"
   },
   "scripts": {
-    "eslint": "eslint *.js lib/*.js test/*.js",
-    "jscs": "jscs *.js lib/*.js test/*.js",
+    "eslint": "eslint *.js lib/ test/",
+    "jscs": "jscs *.js lib/ test/",
     "lint": "npm run eslint && npm run jscs",
-    "unit": "mocha --recursive -R spec",
+    "unit": "mocha",
     "test": "npm run lint && npm run unit",
-    "coverage": "istanbul cover _mocha --report lcovonly -- -R spec",
-    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls"
+    "coverage": "unit-coverage run -s 'lib/**' -t 'test/**' -r lcov -o coverage/lcov.info",
+    "coverage-html": "unit-coverage run -s 'lib/**' -t 'test/**' -r html -o coverage/index.html",
+    "coveralls": "unit-coverage run -q -s 'lib/**' -t 'test/**' -r lcov | coveralls",
+    "travis": "npm run test && npm run coveralls"
   },
   "engines": {
     "node": ">=0.10.0"
