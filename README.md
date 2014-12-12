@@ -13,8 +13,8 @@ Work in progress:
   - [x] parser
     - [x] sync
     - [x] tests
-  - [ ] DOM API
-    - [ ] tests
+  - [x] DOM API
+    - [x] tests
   - [ ] serializer
     - [ ] deal with XML entities
     - [x] tests
