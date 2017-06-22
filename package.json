@@ -48,16 +48,18 @@
     "jshint": "jshint --show-non-errors ."
   },
   "dependencies": {
-    "coa": "~1.0.1",
-    "colors": "~1.1.2",
     "css-select": "^1.3.0-rc0",
     "css-select-base-adapter": "^0.1.0",
     "css-tree": "1.0.0-alpha18",
+    "css-url-regex": "^1.1.0",
     "csso": "^3.0.1",
+    "coa": "~1.0.1",
+    "colors": "~1.1.2",
     "js-yaml": "~3.7.0",
     "mkdirp": "~0.5.1",
     "sax": "~1.2.1",
     "stable": "^0.1.5",
+    "unquote": "^1.1.0",
     "whet.extend": "~0.9.9"
   },
   "devDependencies": {
