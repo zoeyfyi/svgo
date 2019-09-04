@@ -65,6 +65,9 @@
   "devDependencies": {
     "coveralls": "^3.0.5",
     "fs-extra": "~8.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-imagemin": "^6.1.0",
     "istanbul": "~0.4.5",
     "jshint": "~2.10.2",
     "mocha": "~6.1.4",
