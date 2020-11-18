@@ -520,4 +520,26 @@ describe('svg2js', function() {
         });
     });
 
+	describe('doctype-comment', function() {
+        var filepath = PATH.resolve(__dirname, './test.doctype-comment.svg'),
+            root;
+
+        before(function(done) {
+            FS.readFile(filepath, 'utf8', function(err, data) {
+                if (err) throw err;
+
+                SVG2JS(data, function(result) {
+                    root = result;
+                });
+                done();
+            });
+        });
+
+        describe('root', function() {
+            it('should exist', function() {
+                return root.should.exist;
+            });
+        });
+    });
+
 });
