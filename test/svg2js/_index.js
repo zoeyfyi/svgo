@@ -494,4 +494,30 @@ describe('svg2js', function() {
         });
     });
 
+	describe('unicode-chars', function() {
+        var filepath = PATH.resolve(__dirname, './test.unicode.svg'),
+            root;
+
+        before(function(done) {
+            FS.readFile(filepath, 'utf8', function(err, data) {
+                if (err) throw err;
+
+                SVG2JS(data, function(result) {
+                    root = result;
+                });
+                done();
+            });
+        });
+
+        describe('root', function() {
+            it('should exist', function() {
+                return root.should.exist;
+            });
+
+            it('should keep unicodes characters', function() {
+                should(root.content[0].content[0].content[0].text).be.equal('test spaces   😑           end');
+            });
+        });
+    });
+
 });
