@@ -48,7 +48,9 @@ exports.fn = function (document, options) {
     var targetEl = document.querySelector(href);
     if (!targetEl) continue;
 
+    
     // clone referenced element for insertion
+    // targetEl.style.properties.set("foo", "bar");
     var insertEl = targetEl.clone();
 
     // Attribute inheritance of the dereferenced element
@@ -63,7 +65,14 @@ exports.fn = function (document, options) {
         return;
       if (!options.keepHref && hrefAttrs.includes(attr.name)) return;
 
-      insertEl.addAttr(attr);
+        if (attr.name === "style") {
+          let properties = useEl.style.getProperties();
+          properties.forEach(({value, priority}, propertyName) => {
+            insertEl.style.setProperty(propertyName, value, priority);
+          });
+        } else {
+          insertEl.addAttr(attr);
+        }
     });
     insertEl.removeAttr('id'); // only the original node is allowed to have this ID (IDs must be unique)
 
